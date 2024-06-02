@@ -57,14 +57,14 @@ void RelaunchAsAdmin() {
 
 bool RegisterCustomUrlScheme(const std::string& appPath) {
     HKEY hKey;
-    const char* urlScheme = "appname";
+    const char* urlScheme = "jgdps";
 
     // Create the registry key for the custom URL scheme
     LONG result = RegCreateKeyEx(HKEY_CLASSES_ROOT, urlScheme, 0, NULL, 0, KEY_WRITE, NULL, &hKey, NULL);
     if (result != ERROR_SUCCESS) {
         return false;
     }
-    RegSetValueEx(hKey, NULL, 0, REG_SZ, (const BYTE*)"URL:AppName Protocol", strlen("URL:AppName Protocol") + 1);
+    RegSetValueEx(hKey, NULL, 0, REG_SZ, (const BYTE*)"URL:JGDPS Protocol", strlen("URL:JGDPS Protocol") + 1);
     RegSetValueEx(hKey, "URL Protocol", 0, REG_SZ, (const BYTE*)"", 1);
 
     HKEY hSubKey;
