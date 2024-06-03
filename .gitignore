@@ -1,1 +1,4 @@
 .vscode/
+build/
+dist/
+JGDPS Launcher.spec
